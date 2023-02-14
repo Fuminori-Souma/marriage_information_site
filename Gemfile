@@ -27,6 +27,25 @@ gem "stimulus-rails"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 
+# Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
+gem 'turbolinks', '~> 5'
+
+# bootstrap導入用。詳細は右記：https://www.sejuku.net/blog/11043
+# gem 'bootstrap-sass', '~> 3.3.6'
+# gem 'sass-rails', '>= 3.2'
+
+gem 'ransack'
+
+gem 'pry-rails'
+gem 'pry-doc'
+gem 'pry-stack_explorer'
+gem 'pry-byebug'
+
+gem 'seed-fu'
+
+gem 'axlsx_rails'
+
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 

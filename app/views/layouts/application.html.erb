@@ -8,9 +8,44 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   </head>
 
   <body>
+    <header class="header-frame">
+      <div class="header-logo">
+        <a href="/"><img width="140px" src="/motoky_logo.png" alt=""></a>
+      </div>
+      <ul class="header-menus">
+        <li>
+          <%= link_to("「モトキィ」とは", "/about") %>
+        </li>
+        <li>
+          <%= link_to("投稿する", "/posts/new") %>
+        </li>
+        <li>
+          <%= link_to("投稿を見る", "/posts/index") %>
+        </li>
+<%
+=begin
+%>
+        <li>
+          <%= link_to("新規投稿", "/posts/new") %>
+        </li>
+<%
+=end
+%>
+      </ul>
+    </header>
+
+    <% if flash[:notice] %>
+      <div class="flash">
+        <%= flash[:notice]%>
+      </div>
+    <% end %>
+    
     <%= yield %>
   </body>
 </html>
