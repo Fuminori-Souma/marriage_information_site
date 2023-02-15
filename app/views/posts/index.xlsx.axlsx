@@ -1,0 +1,35 @@
+# 参考：https://qiita.com/syukan3/items/41ae61b3b7bace7733f6
+# シンタックスハイライト設定方法：https://siamcats.hateblo.jp/entry/2017/05/09/180613
+
+wb = xlsx_package.workbook
+
+# @excels.each_with_index do |excel, index|
+# binding.pry
+
+wb.add_worksheet(name: "main") do |sheet|    
+  
+  postid = (1..Post.count).to_a
+  
+  # カラム名を1行目に記載
+  sheet.add_row do |row|
+    1.upto(Post.column_names.count) { |i|
+
+      columnName = associateColumnNameWithNormalName(i-1)
+      row.add_cell(columnName)
+      # row.add_cell(Post.column_names[i-1])  
+    }
+  end
+
+  # 各テーブルのカラムの内容を記載
+  @posts.zip(postid).each do |post, i|
+    sheet.add_row do |row|
+
+      # テーブル毎に内容を記載
+      1.upto(Post.column_names.count) { |j|
+        target_column = Post.column_names[j-1]
+        content = Post.pluck(target_column)
+        row.add_cell(content[i-1])
+      }
+    end
+  end
+ end

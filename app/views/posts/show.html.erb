@@ -1,0 +1,48 @@
+<div class="main posts-show">
+  <div class="container">
+    <div class="posts-show-item">
+      <div class="show-q-and-a">
+        <p class="show-question">場所</p>
+        <p class="show-answer"><%= @post.place %></p>
+      </div>
+      <hr>
+      <div class="show-q-and-a">
+        <p class="show-question">季節</p>
+        <p class="show-answer"><%= @post.season %></p>
+      </div>
+      <hr>
+      <div class="show-q-and-a">
+        <p class="show-question">時間帯</p>
+        <p class="show-answer"><%= @post.time %></p>
+      </div>
+      <hr>
+      <div class="show-q-and-a">
+        <p class="show-question">プレゼント</p>
+        <p class="show-answer"><%= @post.present %></p>
+      </div>
+      <hr>
+      <div class="show-q-and-a">
+        <p class="show-question">費用</p>
+        <p class="show-answer"><%= @post.budget %></p>
+      </div>
+      <hr>
+      <div class="show-q-and-a">
+        <p class="show-question">プロポーズの<br>言葉</p>
+        <p class="show-answer"><%= @post.whatsaid %></p>
+      </div>
+      <hr>
+      <div class="show-q-and-a">
+        <p class="show-question">その他<br>備考</p>
+        <p class="show-answer"><%= @post.comment %></p>
+      </div>
+      <hr>
+      <div class="post-time">
+        投稿日時: <%= @post.created_at.strftime("%Y/%-m/%-d %-H:%-M:%-S") %>
+      </div>
+      <div class="post-menus">
+        <%= link_to("編集", "/posts/#{@post.id}/edit") %>
+        <%= button_to("削除", "/posts/#{@post.id}/destroy", {class: "delete-button", method: "post"}) %>
+      </div>
+    </div>
+  </div>
+</div>

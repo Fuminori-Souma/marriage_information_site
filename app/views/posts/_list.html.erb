@@ -1,0 +1,6 @@
+<% @posts.each do |post| %>
+  <%= link_to post_path(post) do %>
+    
+  <% end %>
+  <p>場所：<%= post.whatsaid %></p>
+<% end %>

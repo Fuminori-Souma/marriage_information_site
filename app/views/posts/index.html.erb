@@ -1,0 +1,138 @@
+<div class="main posts-index">
+  <div class="container">
+
+    <!-- 以下の1行を追記 -->
+    
+    
+
+    <!--タブ部分-->
+<%
+=begin
+%>    
+    <h1 style="text-align: center">＊ページ遷移用タブ＊</h1>
+    <ul class="tab-list list-unstyled">
+      <li class="tab tab-active">
+        New
+      </li>
+      <li class="tab">
+        Popular
+      </li>
+      <li class="tab">
+        Pick up
+      </li>
+    </ul>
+    <!--タブで選択された要素部分 - ここから-->
+    <div class="tabbox-contents">
+      <div class="tabbox box-show">
+        <%= link_to("motokey", "/posts/lndex") %>    
+      </div>
+      <div class="tabbox">
+        <%= render 'posts/list', posts: @posts %>
+      </div>
+      <div class="tabbox">
+        <%= render 'posts/list', posts: @pick_up_posts %>
+      </div>
+    </div>
+<%
+=end
+%>
+    <!--タブで選択された要素部分 - ここまで-->
+
+    
+    <h1 style="text-align: center">条件から投稿一覧を検索</h1>
+
+<% 
+=begin
+%>
+    <%= search_form_for @q, url: search_posts_path do |f| %>
+<% 
+=end
+%>
+    <%= search_form_for @q do |f| %>
+      
+      <div class="condition-to-search-q-and-a">
+        <%= f.label :place_cont, '場所', class: 'condition-to-search-q' %>
+        <%= f.search_field :place_cont, placeholder: " 例）約束の地", class: 'condition-to-search-a' %>
+      </div>
+
+      <div class="condition-to-search-q-and-a">
+        <%= f.label :season_eq_any , "季節", class: 'condition-to-search-q' %>
+        <div class="condition-to-search-a">
+          <span class="answer-check-box"> <%= f.check_box :season_eq_any, { multiple: true }, '春', '' %>春 </span>
+          <span class="answer-check-box"> <%= f.check_box :season_eq_any, { multiple: true }, '夏', '' %>夏 </span>
+          <span class="answer-check-box"> <%= f.check_box :season_eq_any, { multiple: true }, '秋', '' %>秋 </span>
+          <span class="answer-check-box"> <%= f.check_box :season_eq_any, { multiple: true }, '冬', '' %>冬 </span>
+        </div>
+      </div>
+
+      <div class="condition-to-search-q-and-a">
+        <%= f.label :time_eq_any , "時間帯", class: 'condition-to-search-q' %>
+        <div class="condition-to-search-a">
+          <span class="answer-check-box"> <%= f.check_box :time_eq_any, { multiple: true }, '朝', '' %>朝 </span>
+          <span class="answer-check-box"> <%= f.check_box :time_eq_any, { multiple: true }, '昼', '' %>昼 </span>
+          <span class="answer-check-box"> <%= f.check_box :time_eq_any, { multiple: true }, '夕方', '' %>夕方 </span>
+          <span class="answer-check-box"> <%= f.check_box :time_eq_any, { multiple: true }, '夜', '' %>夜 </span>
+        </div>
+      </div>
+
+      <div class="condition-to-search-q-and-a">
+        <%= f.label :present_cont, 'プレゼント', class: 'condition-to-search-q' %>
+        <%= f.search_field :present_cont, placeholder: " 例）婚約指輪", class: 'condition-to-search-a' %>
+      </div>
+      
+      <div class="condition-to-search-q-and-a">
+        <%= f.label :budget_eq_any , "費用", class: 'condition-to-search-q' %>
+        <div class="condition-to-search-a">
+          <span class="answer-check-box"> <%= f.check_box :budget_eq_any, { multiple: true }, '〜1,000円', '' %>〜1,000円 </span>
+          <span class="answer-check-box"> <%= f.check_box :budget_eq_any, { multiple: true }, '1,000 〜 10,000円', '' %>1,000 〜 10,000円 </span>
+          <span class="answer-check-box"> <%= f.check_box :budget_eq_any, { multiple: true }, '10,000円 〜', '' %>10,000円 〜 </span>
+        </div>
+      </div>
+
+      <div class="condition-to-search-q-and-a">
+        <%= f.label :whatsaid_cont, raw(replaceNewLineCode("プロポーズの\n言葉")), class: 'condition-to-search-q' %>
+        <%= f.search_field :whatsaid_cont, placeholder: " 例）俺は結婚が運命なんだっ！！", class: 'condition-to-search-a' %>
+      </div>
+
+      <div class="condition-to-search-q-and-a">
+        <%= f.label :comment_cont, raw(replaceNewLineCode("その他\n備考")), class: 'condition-to-search-q' %>
+        <%= f.search_field :comment_cont, placeholder: " 例）当たって砕けろ！", class: 'condition-to-search-a' %>
+      </div>
+
+      <br>
+      <%= f.submit '検索開始' %>
+    <% end %>
+
+<%
+=begin
+%>  
+    <%= search_form_for @q do |f| %>
+    <%= f.search_field :place, placeholder: '場所' %>
+    <%= f.search_field :whatsaid, placeholder: 'プロポーズ' %>
+    <%= f.search_field :comment, placeholder: 'その他・備考' %>
+    <br>
+    <label>
+      <%= f.check_box :id_eq_any , { multiple: true }, 8, 'あああ' %>
+      <label> これが…俺のッッ </label>
+    </label>
+    <br>
+    <%= f.submit '検索…開始ッッ' %>
+    <% end %>
+<%
+=end
+%>
+
+    <h1 class="post-index-title">投稿内容一覧</h1>
+    <% @posts.each do |post| %>
+      <div class="post-index-item">
+        <%= link_to(post.whatsaid, "/posts/#{post.id}") %>
+      </div>
+    <% end %>
+    <div align="center">
+      <button class="bttn-make-msg" onclick="location.href='/posts/new'"> 新規投稿する </button>
+    </div>
+    <%= link_to(posts_path(@excels, format: :xlsx)) do %>
+      <button class="excel-out-button"> 投稿一覧をExcel出力 </button>
+    <% end %>
+  </div>
+</div>

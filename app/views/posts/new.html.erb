@@ -1,0 +1,66 @@
+<div class="main posts-new">
+  <div class="container">
+    <h1 class="form-heading">投稿する</h1>
+    <%= form_with url: "/posts/create" do |form| %>
+      <div class="form">
+        <div class="form-body">
+          <div class="q-and-a">
+            <div class="item-label">場所は？
+              <span class="asterisk-for-requisite">*</span>
+            </div>
+            <input class="input-text" name="place">
+          </div>
+          <div class="q-and-a">
+            <div class="item-label">季節は？
+            </div>
+            <input name="season" type="radio" value="春" checked="checked"/>
+            <label class="radio-label">春</label>
+            <input name="season" type="radio" value="夏"/>
+            <label class="radio-label">夏</label>
+            <input name="season" type="radio" value="秋"/>
+            <label class="radio-label">秋</label>
+            <input name="season" type="radio" value="冬"/>
+            <label class="radio-label">冬</label>
+          </div>
+          <div class="q-and-a">
+            <div class="item-label">時間帯は？</div>
+            <input name="time" type="radio" value="朝" checked="checked"/>
+            <label class="radio-label">朝</label>
+            <input name="time" type="radio" value="昼"/>
+            <label class="radio-label">昼</label>
+            <input name="time" type="radio" value="夕方"/>
+            <label class="radio-label">夕方</label>
+            <input name="time" type="radio" value="夜"/>
+            <label class="radio-label">夜</label>
+          </div>
+          <div class="q-and-a">
+            <div class="item-label">プレゼントは？</div>
+            <input class="input-text" name="present">
+          </div>
+          <div class="q-and-a">
+            <div class="item-label">費用は？</div>
+            <input name="budget" type="radio" value="〜1,000円" checked="checked"/>
+            <label class="radio-label" style="font-size:15px;">〜1,000円</label>
+            <input name="budget" type="radio" value="1,000 〜 10,000円"/>
+            <label class="radio-label" style="font-size:15px;">1,000 〜 10,000円</label>
+            <input name="budget" type="radio" value="10,000円 〜"/>
+            <label class="radio-label" style="font-size:15px;">10,000円 〜</label>
+          </div>
+          <div class="q-and-a">
+            <div class="item-label">プロポーズの<br>言葉は？
+              <span class="asterisk-for-requisite">*</span>
+            </div>
+            <textarea name="whatsaid"></textarea>
+          </div>
+          <div class="q-and-a">
+            <div class="item-label">その他<br>備考</div>
+            <textarea name="comment" style="min-height: 70px;"></textarea>
+          </div>
+          <span class="asterisk-for-requisite" style="float: left">*&nbsp;</span>
+          <p class="text-requisite"> … 必須項目</p>
+          <input type="submit" value="投稿">
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
