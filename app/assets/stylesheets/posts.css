@@ -1,13 +1,6 @@
 /* posts/index ================================ */
 @font-face {
   font-family: 'KFhimajiFUDE';
-  /* src: asset-url('/fonts/KFhimajiFUDE.otf') format('opentype'); */
-  /* src: asset-url('/fonts/KFhimajiFUDE.otf') format('truetype'); */
-  /* src: asset-url('KFhimajiFUDE.otf') format('opentype'); */
-  /* src: asset-url('KFhimajiFUDE.otf') format('truetype'); */
-  /* src: font-url('/fonts/KFhimajiFUDE.otf') format('opentype'); */
-  /* src: font-url('/assets/KFhimajiFUDE.otf') format('truetype'); */
-  /* src: font-url('/assets/KFhimajiFUDE.otf') format('opentype'); */
   src: asset-url('/assets/KFhimajiFUDE.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
@@ -146,6 +139,10 @@
     width: 360px;
   }
 
+  .btn btn-search-start {
+    color: green;
+  }
+
   .radio-label{
     /* padding-right: 10%; */
     margin-right: 10px;
@@ -178,9 +175,7 @@
     border-radius: 7px;
     /* border-top-right-radius: 10px;
     border-bottom-left-radius: 10px; */
-    font-family: 'KFhimajiFUDE';
-    /* src: asset-url('/fonts/KFhimajiFUDE.otf') format('opentype'); */
-    /* src: asset-url('/fonts/KFhimajiFUDE.otf') format('truetype'); */
+    /* font-family: 'KFhimajiFUDE'; */
   }
 
   .condition-to-search-a {
