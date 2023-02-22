@@ -57,4 +57,4 @@ $(function() {
     var a = document.getElementById('testtest');
     alert(a.textContent + 'っス…');
   });
-});
+});import * as bootstrap from "bootstrap"
