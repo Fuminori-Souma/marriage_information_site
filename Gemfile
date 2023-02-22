@@ -34,11 +34,6 @@ gem 'turbolinks', '~> 5'
 # gem 'bootstrap-sass', '~> 3.3.6'
 # gem 'sass-rails', '>= 3.2'
 
-# bootstrap導入用。下記を参照
-# https://note.com/y0419y/n/nb06a1cc2f7e8
-# https://qiita.com/PJZ9n/items/03341f942c2c84713c99
-gem 'cssbundling-rails'
-
 gem 'ransack'
 
 gem 'pry-rails'
