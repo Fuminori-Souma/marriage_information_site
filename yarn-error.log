@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/local/bin/node /usr/share/yarn/bin/yarn.js build:appcss --watch
+  /usr/local/bin/node /usr/share/yarn/bin/yarn.js build:css
 
 PATH: 
   /home/fumi/.rbenv/shims:/home/fumi/.rbenv/bin:/home/fumi/.rbenv/shims:/home/fumi/.rbenv/shims:/home/fumi/.rbenv/bin:/home/fumi/.pyenv/shims:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:/home/fumi/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/fumi/.local/share/JetBrains/Toolbox/scripts:/home/fumi/.local/share/JetBrains/Toolbox/scripts
@@ -14,7 +14,7 @@ Platform:
   linux x64
 
 Trace: 
-  SyntaxError: /home/fumi/workspace/myRails/motoRail/package.json: Unexpected token / in JSON at position 200
+  SyntaxError: /home/fumi/workspace/myRails/motoRail/package.json: Unexpected string in JSON at position 234
       at JSON.parse (<anonymous>)
       at /usr/share/yarn/lib/cli.js:1629:59
       at Generator.next (<anonymous>)
@@ -31,10 +31,29 @@ npm manifest:
       "bootstrap-icons": "^1.10.3",
       "sass": "^1.58.3"
     },
+  
     "scripts": {
-      // "build:css": "sass ./app/assets/stylesheets/application.bootstrap.scss:./app/assets/builds/application.css --no-source-map --load-path=node_modules"
-      "build:appcss": "sass ./app/assets/stylesheets/application.bootstrap.scss:./app/assets/builds/application.css --no-source-map --load-path=node_modules"
+      "unko": "echo 'ぶんこ、うりうり'"
     }
+  
+    "scripts": {
+      "build:css": "sass ./app/assets/stylesheets/application.bootstrap.scss:./app/assets/builds/application.css --no-source-map --load-path=node_modules"
+      }
+      
+      
+      "scripts": {
+      "build-css": "node-sass --include-path scss ./app/assets/stylesheets/style.scss ./app/assets/stylesheets/style.css",
+      "watch-css": "nodemon -e scss -x \"npm run build-css\"",
+      "sync": "browser-sync start --server --files \"**/*\" ",
+      "dev": "concurrently --kill-others \"npm run watch-css\" \"npm run sync\""
+      },
+      "devDependencies": {
+      "browser-sync": "^2.23.3",
+      "concurrently": "^3.5.1",
+      "node-sass": "^4.7.2",
+      "nodemon": "^1.14.7"
+      }
+      
   }
 
 yarn manifest: 
