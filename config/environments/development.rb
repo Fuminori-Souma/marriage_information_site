@@ -68,7 +68,7 @@ Rails.application.configure do
   # Uncomment if you wish to allow Action Cable access from any origin.
   # config.action_cable.disable_request_forgery_protection = true
 
-  config.hosts << '49cc-2405-6580-95c0-9900-580c-942a-c7be-567b.jp.ngrok.io'
+  config.hosts << 'efee-2405-6580-95c0-9900-8b3a-4098-9736-81f7.jp.ngrok.io'
   # config.hosts.clear
 
   # config.web_console.whitelisted_ips = '192.168.1.11', '192.168.1.5'

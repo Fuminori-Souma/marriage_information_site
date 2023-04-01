@@ -1,19 +1,22 @@
-// // Configure your import map in config/importmap.rb. Read more: https://github.com/rails/importmap-rails
-// import "@hotwired/turbo-rails"
-// import "controllers"
+// Configure your import map in config/importmap.rb. Read more: https://github.com/rails/importmap-rails
+import "@hotwired/turbo-rails"
+import "controllers"
 
-// // import Rails from "@rails/ujs"
-// // import Turbolinks from "turbolinks"
-// // import * as ActiveStorage from "@rails/activestorage"
-// // import "channels"
-// // Rails.start()
-// // Turbolinks.start()
-// // ActiveStorage.start()
+//= require jquery
+//= require jquery_ujs
 
-// // require("@rails/ujs").start()
-// // require("turbolinks").start()
-// // require("@rails/activestorage").start()
-// // require("channels")
+// import Rails from "@rails/ujs"
+// import Turbolinks from "turbolinks"
+// import * as ActiveStorage from "@rails/activestorage"
+// import "channels"
+// Rails.start()
+// Turbolinks.start()
+// ActiveStorage.start()
+
+// require("@rails/ujs").start()
+// require("turbolinks").start()
+// require("@rails/activestorage").start()
+// require("channels")
 
 // $(function(){
 //   setTimeout("$('.flash').fadeOut('slow')", 2000);
@@ -58,3 +61,14 @@
 //     alert(a.textContent + 'っス…');
 //   });
 // });import * as bootstrap from "bootstrap"
+
+
+$(function () {
+    // タイトルをクリックすると
+    $(".js-accordion-title").on("click", function () {
+      // ク リックした次の要素を開閉
+      $(this).next().slideToggle(300);
+      // タイトルにopenクラスを付け外しして矢印の向きを変更
+      $(this).toggleClass("open", 300);
+    });
+  });

@@ -92,7 +92,8 @@
   }
   
   .main {
-    position: absolute;
+    // position: absolute;
+    position: relative;
     top: 64px;
     width: 100%;
     height: auto;
@@ -130,7 +131,7 @@
 
   .header-logo {
     float: left;
-    padding-top: 12px;
+    padding-top: 2px;
     padding-left: 20px;
     color: white;
     font-size: 22px;
@@ -182,9 +183,11 @@
   
   /* top ================================ */
   .top-main {
-    padding: 200px 0 100px;
+    // padding: 200px 0 100px;
+    padding: 110px 0 100px;
     text-align: center;
-    position: absolute;
+    // position: absolute;
+    position: relative;
     top: 0;
     width: 100%;
     height: auto;
@@ -203,10 +206,39 @@
 
     // background-image: url("/~/Pictures/m1.jpeg");
   }
+
+  .top-title {
+    position: relative;
+    width: 900px;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+
+  .top-picture {
+    position: relative;
+    width: 900px;
+  }
   
   .top-message {
-    position: relative;
+    position: absolute;
+    font-size: 36px;
+    color: pink;
+
+    top: 0;
+    left: 0;
+    // right: 0;
+    // margin: auto;
+    // margin-left: 300px;
+    padding-top: 120px;
+    padding-left: 20px;
+    text-align: left;
+    height: 2000px;
   }
+
+  // .top-message p {
+  //   text-align: center;
+  // }
   
   .top-main h2 {
     font-size: 70px;
@@ -216,9 +248,9 @@
     margin-bottom: 20px;
   }
   
-  .top-main p {
-    font-size: 24px;
-  }
+  // .top-main p {
+  //   font-size: 24px;
+  // }
   
   /* about ================================ */
   .about-main {
@@ -435,8 +467,9 @@
     cursor: pointer;
   }
 
-  .about-pic {
-    width: 140px;
+  
+  .about-picture {
+    width: 600px;
   }
 
     // .cookie-consent {
@@ -500,3 +533,46 @@
     //   }
     
     // }
+
+  // .fade-message {
+  //   font-size: 40px;
+  //   color: pink;
+  // }
+
+
+  .good {
+    // width: 50px;
+    // height: 50px;
+    // color: #ffffff;
+    // background-color: #2779bd;
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+    // font-size: 1.5rem;
+    // border-radius: 50%;
+    // cursor: pointer;
+    
+    position: absolute;
+    font-size: 2.0rem;
+    top: 0;
+    left: 0;
+  }
+
+  .fade-in {
+    animation-name: fade-in-anime;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+    // animation: fadein 0s ease forwards;
+    opacity: 0;
+  }
+  
+  @keyframes fade-in-anime{
+    from {
+      opacity: 0;
+    }
+  
+    to {
+      opacity: 1;
+    }
+  }
+  

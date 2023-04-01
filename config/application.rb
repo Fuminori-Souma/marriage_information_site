@@ -19,6 +19,7 @@ module MotoRail
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
     # config.hosts << '2a4c-2400-4153-c521-7000-3a3f-ec44-e475-8a6b.jp.ngrok.io'
+    # config.hosts << '9eaf-2405-6580-95c0-9900-8b3a-4098-9736-81f7.jp.ngrok.io'
     # config.web_console.whitelisted_ips = '172.16.1.233', '172.16.1.149'
     # Rails.application.config.assets.paths << Rails.root.join("stylesheets/css")
   end

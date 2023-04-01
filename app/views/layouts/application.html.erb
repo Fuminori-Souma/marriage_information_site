@@ -6,13 +6,13 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%# <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %> %>
+    <%# <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag "application", media: "all", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-
+    
     <%# hack for popperjs error: https://github.com/rails/importmap-rails/issues/65#issuecomment-999939960 %>
     <%# <script> + window.process = {env: {}}  </script> %>
   </head>
@@ -26,7 +26,7 @@
     
     <header class="header-frame">
       <div class="header-logo">
-        <a href="/"><img width="140px" src="/motoky_logo.png" alt=""></a>
+        <a href="/"><img width="140px" style="mix-blend-mode: multiply;" src="/motoky_logo.png" alt=""></a>
       </div>
       <ul class="header-menus">
         <li>

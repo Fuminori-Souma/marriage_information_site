@@ -49,58 +49,70 @@
 =end
 %>
     <%= search_form_for @q do |f| %>
-      
       <div class="condition-to-search-q-and-a">
-        <%= f.label :place_cont, '場所', class: 'condition-to-search-q' %>
-        <%= f.search_field :place_cont, placeholder: " 例）約束の地", class: 'condition-to-search-a' %>
+        <%= f.label :place_cont, 'フリーワード', class: 'condition-to-search-q' %>
+        <%= f.search_field :place_cont, placeholder: " プロポーズの言葉、プレゼント、場所などで検索", class: 'condition-to-search-a' %>
       </div>
 
-      <div class="condition-to-search-q-and-a">
-        <%= f.label :season_eq_any , "季節", class: 'condition-to-search-q' %>
-        <div class="condition-to-search-a">
-          <span class="answer-check-box"> <%= f.check_box :season_eq_any, { multiple: true }, '春', '' %>春 </span>
-          <span class="answer-check-box"> <%= f.check_box :season_eq_any, { multiple: true }, '夏', '' %>夏 </span>
-          <span class="answer-check-box"> <%= f.check_box :season_eq_any, { multiple: true }, '秋', '' %>秋 </span>
-          <span class="answer-check-box"> <%= f.check_box :season_eq_any, { multiple: true }, '冬', '' %>冬 </span>
+      <details data-controller="accordion">
+        <summary data-accordion-target="summary" data-action="click->accordion#toggle">詳細条件を表示</summary>
+        <div data-accordion-target="content">
+
+          <div>
+            <div class="condition-to-search-q-and-a">
+              <%= f.label :place_cont, '場所', class: 'condition-to-search-q' %>
+              <%= f.search_field :place_cont, placeholder: " 例）約束の地", class: 'condition-to-search-a' %>
+            </div>
+
+            <div class="condition-to-search-q-and-a">
+              <%= f.label :season_eq_any , "季節", class: 'condition-to-search-q' %>
+              <div class="condition-to-search-a">
+                <span class="answer-check-box"> <%= f.check_box :season_eq_any, { multiple: true }, '春', '' %>春 </span>
+                <span class="answer-check-box"> <%= f.check_box :season_eq_any, { multiple: true }, '夏', '' %>夏 </span>
+                <span class="answer-check-box"> <%= f.check_box :season_eq_any, { multiple: true }, '秋', '' %>秋 </span>
+                <span class="answer-check-box"> <%= f.check_box :season_eq_any, { multiple: true }, '冬', '' %>冬 </span>
+              </div>
+            </div>
+
+            <div class="condition-to-search-q-and-a">
+              <%= f.label :time_eq_any , "時間帯", class: 'condition-to-search-q' %>
+              <div class="condition-to-search-a">
+                <span class="answer-check-box"> <%= f.check_box :time_eq_any, { multiple: true }, '朝', '' %>朝 </span>
+                <span class="answer-check-box"> <%= f.check_box :time_eq_any, { multiple: true }, '昼', '' %>昼 </span>
+                <span class="answer-check-box"> <%= f.check_box :time_eq_any, { multiple: true }, '夕方', '' %>夕方 </span>
+                <span class="answer-check-box"> <%= f.check_box :time_eq_any, { multiple: true }, '夜', '' %>夜 </span>
+              </div>
+            </div>
+
+            <div class="condition-to-search-q-and-a">
+              <%= f.label :present_cont, 'プレゼント', class: 'condition-to-search-q' %>
+              <%= f.search_field :present_cont, placeholder: " 例）婚約指輪", class: 'condition-to-search-a' %>
+            </div>
+            
+            <div class="condition-to-search-q-and-a">
+              <%= f.label :budget_eq_any , "費用", class: 'condition-to-search-q' %>
+              <div class="condition-to-search-a">
+                <span class="answer-check-box"> <%= f.check_box :budget_eq_any, { multiple: true }, '〜1,000円', '' %>〜1,000円 </span>
+                <span class="answer-check-box"> <%= f.check_box :budget_eq_any, { multiple: true }, '1,000 〜 10,000円', '' %>1,000 〜 10,000円 </span>
+                <span class="answer-check-box"> <%= f.check_box :budget_eq_any, { multiple: true }, '10,000円 〜', '' %>10,000円 〜 </span>
+              </div>
+            </div>
+
+            <div class="condition-to-search-q-and-a">
+              <%= f.label :whatsaid_cont, raw(replaceNewLineCode("プロポーズの\n言葉")), class: 'condition-to-search-q' %>
+              <%= f.search_field :whatsaid_cont, placeholder: " 例）俺は結婚が運命なんだっ！！", class: 'condition-to-search-a' %>
+            </div>
+
+            <div class="condition-to-search-q-and-a">
+              <%= f.label :comment_cont, raw(replaceNewLineCode("その他\n備考")), class: 'condition-to-search-q' %>
+              <%= f.search_field :comment_cont, placeholder: " 例）当たって砕けろ！", class: 'condition-to-search-a' %>
+            </div>
+
+            <br>
+            <%= f.submit '検索開始', class: "btn btn-search-start" %>
+          </div>
         </div>
-      </div>
-
-      <div class="condition-to-search-q-and-a">
-        <%= f.label :time_eq_any , "時間帯", class: 'condition-to-search-q' %>
-        <div class="condition-to-search-a">
-          <span class="answer-check-box"> <%= f.check_box :time_eq_any, { multiple: true }, '朝', '' %>朝 </span>
-          <span class="answer-check-box"> <%= f.check_box :time_eq_any, { multiple: true }, '昼', '' %>昼 </span>
-          <span class="answer-check-box"> <%= f.check_box :time_eq_any, { multiple: true }, '夕方', '' %>夕方 </span>
-          <span class="answer-check-box"> <%= f.check_box :time_eq_any, { multiple: true }, '夜', '' %>夜 </span>
-        </div>
-      </div>
-
-      <div class="condition-to-search-q-and-a">
-        <%= f.label :present_cont, 'プレゼント', class: 'condition-to-search-q' %>
-        <%= f.search_field :present_cont, placeholder: " 例）婚約指輪", class: 'condition-to-search-a' %>
-      </div>
-      
-      <div class="condition-to-search-q-and-a">
-        <%= f.label :budget_eq_any , "費用", class: 'condition-to-search-q' %>
-        <div class="condition-to-search-a">
-          <span class="answer-check-box"> <%= f.check_box :budget_eq_any, { multiple: true }, '〜1,000円', '' %>〜1,000円 </span>
-          <span class="answer-check-box"> <%= f.check_box :budget_eq_any, { multiple: true }, '1,000 〜 10,000円', '' %>1,000 〜 10,000円 </span>
-          <span class="answer-check-box"> <%= f.check_box :budget_eq_any, { multiple: true }, '10,000円 〜', '' %>10,000円 〜 </span>
-        </div>
-      </div>
-
-      <div class="condition-to-search-q-and-a">
-        <%= f.label :whatsaid_cont, raw(replaceNewLineCode("プロポーズの\n言葉")), class: 'condition-to-search-q' %>
-        <%= f.search_field :whatsaid_cont, placeholder: " 例）俺は結婚が運命なんだっ！！", class: 'condition-to-search-a' %>
-      </div>
-
-      <div class="condition-to-search-q-and-a">
-        <%= f.label :comment_cont, raw(replaceNewLineCode("その他\n備考")), class: 'condition-to-search-q' %>
-        <%= f.search_field :comment_cont, placeholder: " 例）当たって砕けろ！", class: 'condition-to-search-a' %>
-      </div>
-
-      <br>
-      <%= f.submit '検索開始', class: "btn btn-search-start" %>
+      </details>
     <% end %>
 
 <%
@@ -148,5 +160,4 @@
       <li><a class="dropdown-item" href="#">Separated link</a></li>
     </ul>
   </div>
-  
 </div>
