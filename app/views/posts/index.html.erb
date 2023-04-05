@@ -55,7 +55,7 @@
       </div>
 
       <details data-controller="accordion">
-        <summary data-accordion-target="summary" data-action="click->accordion#toggle">詳細条件を表示</summary>
+        <summary class="accordion-msg" data-accordion-target="summary" data-action="click->accordion#toggle">詳細条件を表示</summary>
         <div data-accordion-target="content">
 
           <div>
@@ -109,11 +109,13 @@
             </div>
 
             <br>
-            <%= f.submit '検索開始', class: "btn btn-search-start" %>
           </div>
         </div>
       </details>
+      <%= f.submit '検索開始', class: "btn btn-primary" %>
     <% end %>
+
+    <button type="button" class="btn btn-dark">Dark</button>
 
 <%
 =begin
