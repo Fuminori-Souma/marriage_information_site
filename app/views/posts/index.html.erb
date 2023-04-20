@@ -1,3 +1,4 @@
+<div class="space-to-top"></div>
 <div class="main posts-index">
   <div class="container">
 
@@ -39,7 +40,7 @@
     <!--タブで選択された要素部分 - ここまで-->
 
     
-    <h1 style="text-align: center">条件から投稿一覧を検索</h1>
+    <h1 class="post-index-title" style="width: 65%;">条件から投稿一覧を検索</h1>
 
 <% 
 =begin
@@ -108,14 +109,21 @@
               <%= f.search_field :comment_cont, placeholder: " 例）当たって砕けろ！", class: 'condition-to-search-a' %>
             </div>
 
-            <br>
           </div>
         </div>
       </details>
-      <%= f.submit '検索開始', class: "btn btn-primary" %>
+      <br>
+      <div style="text-align: center;">
+        <%= f.submit '検索開始', class: "btn btn-outline-danger", style: "border: var(--bs-btn-border-width) solid;" %>
+      </div>
     <% end %>
+    <br>
 
-    <button type="button" class="btn btn-dark">Dark</button>
+    <%# <p style="border-bottom: 1.5px solid #BCC7D4; margin-bottom: 30px;"> %>
+    <%# <hr class="test"> %>
+    <%# <p style="border-image: repeating-linear-gradient(45deg, #ccc 0, #ccc 1px, transparent 0, transparent 50%), repeating-linear-gradient(135deg, #ccc 0, #ccc 1px, transparent 0, transparent 50%);"> %>
+    <%# <hr style="border-image: linear-gradient(#f6b73c, #4d9f0c) 30;"> %>
+    <p class="slanting-section-line"></p>
 
 <%
 =begin
@@ -136,7 +144,7 @@
 =end
 %>
 
-    <h1 class="post-index-title">投稿内容一覧</h1>
+    <h1 class="post-index-title" style="width: 45%;">投稿内容一覧</h1>
     <% @posts.each do |post| %>
       <div class="post-index-item">
         <%= link_to(post.whatsaid, "/posts/#{post.id}") %>
@@ -148,18 +156,5 @@
     <%= link_to(posts_path(@excels, format: :xlsx)) do %>
       <button class="excel-out-button"> 投稿一覧をExcel出力 </button>
     <% end %>
-  </div>
-
-  <div class="btn-group" style="float: left;">
-    <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-      Action
-    </button>
-    <ul class="dropdown-menu">
-      <li><a class="dropdown-item" href="#">Action</a></li>
-      <li><a class="dropdown-item" href="#">Another action</a></li>
-      <li><a class="dropdown-item" href="#">Something else here</a></li>
-      <li><hr class="dropdown-divider"></li>
-      <li><a class="dropdown-item" href="#">Separated link</a></li>
-    </ul>
   </div>
 </div>

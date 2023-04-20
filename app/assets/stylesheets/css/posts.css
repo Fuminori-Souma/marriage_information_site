@@ -1,7 +1,3 @@
-@import 'bootstrap/scss/bootstrap';
-@import 'bootstrap-icons/font/bootstrap-icons';
-
-
 /* posts/index ================================ */
 @font-face {
   font-family: 'KFhimajiFUDE';
@@ -12,8 +8,13 @@
 
 
 .post-index-title {
+  color: #FFFFFF;
+  /* background-color: palevioletred; */
   text-align: center;
-  margin-bottom: 30px;
+  background-image: linear-gradient(180deg, rgb(234, 114, 162), rgb(227,135,172));
+  /* margin-bottom: ; */
+  margin:0 auto 30px auto;
+  font-size: 30px;
 }
 
 .post-index-item {
@@ -237,4 +238,18 @@
     color: #BCC7D4;
     text-align: center;
     font-weight: bold;
+  }
+
+  hr {
+    height: 8px;
+    background-image: repeating-linear-gradient(45deg, #ccc 0, #ccc 1px, transparent 0, transparent 50%), repeating-linear-gradient(135deg, #ccc 0, #ccc 1px, transparent 0, transparent 50%);
+    background-size: 8px 8px; 
+  }
+
+
+  .slanting-section-line{
+    padding: 0.3em 1em;
+    margin: 2em 0;
+    background: -webkit-repeating-linear-gradient(-45deg, #f0f8ff, #f0f8ff 3px,#FAE9EB 3px, #FAE9EB 7px);
+    background: repeating-linear-gradient(-45deg, #f0f8ff, #f0f8ff 3px,#FAE9EB 3px, #FAE9EB 7px);
   }

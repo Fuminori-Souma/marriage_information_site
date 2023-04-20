@@ -15,4 +15,5 @@ Rails.application.config.assets.paths << Rails.root.join("node_modules/bootstrap
 
 # Rails.application.config.assets.paths << Rails.root.join("vendor", "original_assets", "css")
 Rails.application.config.assets.paths << Rails.root.join("app/assets/stylesheets/css")
+Rails.application.config.assets.paths << Rails.root.join("app/assets/stylesheets/scss")
 Rails.application.config.assets.precompile += %w( css/* )
